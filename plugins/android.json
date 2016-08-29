@@ -1,0 +1,46 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.kesiena.workshop"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.kesiena.workshop"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.kesiena.workshop"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.kesiena.workshop"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.kesiena.workshop"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.kesiena.workshop"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.kesiena.workshop"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.kesiena.workshop"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.kesiena.workshop"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.kesiena.workshop"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.kesiena.workshop"
+        }
+    }
+}
