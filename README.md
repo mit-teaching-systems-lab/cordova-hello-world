@@ -1,11 +1,31 @@
 # cordova-hello-world
 
-Experimenting with Cordova for viewing and updating hard-coded contacts
+Experimenting with Cordova for viewing and updating hard-coded contacts.
 
 This code was created by following [this Apache Cordova Tutorial](https://ccoenraets.github.io/cordova-tutorial/create-cordova-project.html)
 
 
 ## Setup and Installations
+### Install Cordova
+
+Make sure you have an up-to-date version of [Node.js](https://nodejs.org/en/) installed on your system.
+
+Open Terminal (Mac) or a Command window (Windows), and type the following command to install the Cordova CLI:
+
+    npm install -g cordova
+
+or on a Mac:
+
+    sudo npm install -g cordova
+
+If you already have Cordova installed on your computer, make sure you upgrade to the latest version:
+
+    npm update -g cordova
+
+or
+
+    sudo npm update -g cordova
+
 
 ### Add support for the iOS or Android SDK
 After cloning this repository, in the project root folder, run one of the following (depending on the platform you wish to develop for):
