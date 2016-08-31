@@ -78,3 +78,8 @@ To build the project in the `workshop/platforms/android` folder and run it in th
 
     cordova emulate android
 
+
+### Additional setup notes
+- Use [config.xml](http://cordova.apache.org/docs/en/latest/platform_plugin_versioning_ref/index.html) to check in project configuration around platforms, plugins and API versions
+- Follow Cordova's [Android platform guide](https://cordova.apache.org/docs/en/latest/guide/platforms/android/)
+- Use Android Studio with a standard setup, and build with Gradle
