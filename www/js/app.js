@@ -1,5 +1,5 @@
 // We use an "Immediate Function" to initialize the application to avoid leaving anything behind in the global scope
-(function () {
+(function() {
 
     var homeTpl = Handlebars.compile($("#home-tpl").html());
     var employeeListTpl = Handlebars.compile($("#employee-list-tpl").html());
@@ -10,7 +10,7 @@
     /* ---------------------------------- Local Variables ---------------------------------- */
     var service = new EmployeeService();
     var slider = new PageSlider($('body'));
-    service.initialize().done(function () {
+    service.initialize().done(function() {
         router.addRoute('', function() {
             // $('body').html(new HomeView(service).render().$el);
             slider.slidePage(new HomeView(service).render().$el);
@@ -31,17 +31,17 @@
     // $('.help-btn').on('click', function() {
     //     alert("Employee Directory v3.4");
     // });
-    document.addEventListener('deviceready', function () {
-        StatusBar.overlaysWebView( false );
+    document.addEventListener('deviceready', function() {
+        StatusBar.overlaysWebView(false);
         StatusBar.backgroundColorByHexString('#ffffff');
         StatusBar.styleDefault();
         if (navigator.notification) { // Override default HTML alert with native dialog
-            window.alert = function (message) {
+            window.alert = function(message) {
                 navigator.notification.alert(
-                    message,    // message
-                    null,       // callback
+                    message, // message
+                    null, // callback
                     "Workshop", // title
-                    'OK'        // buttonName
+                    'OK' // buttonName
                 );
             };
         }
@@ -52,6 +52,5 @@
 
 
     /* ---------------------------------- Local Functions ---------------------------------- */
-    
 
 }());

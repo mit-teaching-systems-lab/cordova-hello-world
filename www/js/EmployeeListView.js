@@ -1,4 +1,4 @@
-var EmployeeListView = function () {
+var EmployeeListView = function() {
 
     var employees;
 
