@@ -42,6 +42,7 @@ After cloning this repository, in the project root folder, run one of the follow
     cordova plugin add cordova-plugin-geolocation  # Geolocation plugin
     cordova plugin add cordova-plugin-contacts  # Contacts plugin
     cordova plugin add cordova-plugin-camera  # Camera plugin
+    cordova plugin add cordova-plugin-media  # For audio recording and playback 
 
 ## Building the Project
 ### Building for iOS

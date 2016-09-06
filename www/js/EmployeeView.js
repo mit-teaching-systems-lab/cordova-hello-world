@@ -5,6 +5,8 @@ var EmployeeView = function(employee) {
         this.$el.on('click', '.add-location-btn', this.addLocation);
         this.$el.on('click', '.add-contact-btn', this.addToContacts);
         this.$el.on('click', '.change-pic-btn', this.changePicture);
+        this.$el.on('click', '.record-audio-btn', this.recordAudio);
+        this.$el.on('click', '.play-audio-btn', this.playAudio);
     };
 
     this.render = function() {
@@ -67,6 +69,66 @@ var EmployeeView = function(employee) {
             options);
 
         return false;
+    };
+
+	var audioCaptureSuccess = function(mediaFiles) {
+	    var i, path, len;
+	    for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+	        path = mediaFiles[i].fullPath;
+	        alert("Saved: " + path);
+            $('.play-audio-btn').attr('data-audio-file', path);
+	    }
+	};
+
+	var audioCaptureError = function(error) {
+	    navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
+	};
+
+    function getFileName(email) {
+        // Replace @ and . with _ and add .amr extension
+        return "audio-" + email.replace(/[@\.]/g, "_") + ".amr";
+    }
+
+    this.recordAudio = function(event) {
+        var src = getFileName(employee.email);
+        var mediaRec = new Media(src,
+            // success callback
+            function() {
+                alert("Saved: " + src);
+            },
+
+            // error callback
+            function(err) {
+                alert("Audio Error: "+ JSON.stringify(err));
+            }
+        );
+
+        // Record audio
+        mediaRec.startRecord();
+
+        // Stop recording after 3 seconds
+        setTimeout(function() {
+            mediaRec.stopRecord();
+            mediaRec.release();
+        }, 3000);
+
+    };
+
+    this.playAudio = function(event) {
+        var src = getFileName(employee.email);
+        var media = new Media(
+            src, 
+            function(){
+                // alert("media success: " + filePath);
+            }, 
+            function(err){
+                alert("Error. Record an audio for this employee before selecting play. Error mssg: " + JSON.stringify(err));
+            }, 
+            function(status){
+                // alert("Status change: " + status);
+            });
+
+        media.play();
     };
 
     this.initialize();
