@@ -1,6 +1,16 @@
+function getFileName(email) {
+    var cleanEmail = email.replace(/[@\.]/g, "_");
+    if (device.platform === 'iOS') {
+        return "audio-" + cleanEmail + ".wav";
+    } else if (device.platform === 'Android') {
+        return "audio-" + cleanEmail + ".amr";
+    }
+}
+
 var EmployeeView = function(employee) {
 
     this.initialize = function() {
+        console.log('initialize');
         this.$el = $('<div/>');
         this.$el.on('click', '.add-location-btn', this.addLocation);
         this.$el.on('click', '.add-contact-btn', this.addToContacts);
@@ -28,7 +38,7 @@ var EmployeeView = function(employee) {
 
     this.addToContacts = function(event) {
         event.preventDefault();
-        console.log('addToContacts');
+        console.console.log('addToContacts');
         if (!navigator.contacts) {
             alert("Contacts API not supported", "Error");
             return;
@@ -84,51 +94,54 @@ var EmployeeView = function(employee) {
 	    navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
 	};
 
-    function getFileName(email) {
-        // Replace @ and . with _ and add .amr extension
-        return "audio-" + email.replace(/[@\.]/g, "_") + ".amr";
-    }
-
     this.recordAudio = function(event) {
         var src = getFileName(employee.email);
+        console.log('recordAudio:new Media');
         var mediaRec = new Media(src,
             // success callback
             function() {
-                alert("Saved: " + src);
+                console.log("recordAudio:Saved: " + src);
             },
 
             // error callback
             function(err) {
-                alert("Audio Error: "+ JSON.stringify(err));
+                console.log("recordAudio:Error: "+ JSON.stringify(err));
             }
         );
 
         // Record audio
         mediaRec.startRecord();
+        console.log('recordAudio:startRecord');
 
         // Stop recording after 3 seconds
         setTimeout(function() {
+            console.log('recordAudio:stopRecord');
             mediaRec.stopRecord();
+            console.log('recordAudio:release');
             mediaRec.release();
+            console.log('recordAudio:done');
         }, 3000);
 
     };
 
     this.playAudio = function(event) {
         var src = getFileName(employee.email);
+        console.log('playAudio:getFileName: ' + src);
         var media = new Media(
             src, 
             function(){
-                // alert("media success: " + filePath);
+                console.log("playAudio:media success: " + src);
             }, 
             function(err){
-                alert("Error. Record an audio for this employee before selecting play. Error mssg: " + JSON.stringify(err));
+                console.log("playAudio:Error. Record an audio for this employee before selecting play. Error mssg: " + JSON.stringify(err));
             }, 
             function(status){
-                // alert("Status change: " + status);
+                console.log("playAudio:Status change: " + status);
             });
 
+        console.log('playAudio:play');
         media.play();
+        console.log('playAudio:done');
     };
 
     this.initialize();
