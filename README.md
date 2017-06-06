@@ -6,8 +6,8 @@ This code was created by following [this Apache Cordova Tutorial](https://ccoenr
 
 Example:
 
-![image](docs/image-one.png | width=200)
-![image](docs/image-two.png  | width=200)
+<div><img src="docs/image-one.png" height="400"></div>
+<div><img src="docs/image-two.png" height="400"></div>
 
 ## Setup and Installations
 ### Install Cordova
