@@ -4,6 +4,10 @@ Experimenting with Cordova for viewing and updating hard-coded contacts.
 
 This code was created by following [this Apache Cordova Tutorial](https://ccoenraets.github.io/cordova-tutorial/create-cordova-project.html)
 
+Example:
+
+<div><img src="docs/image-one.png" height="400"></div>
+<div><img src="docs/image-two.png" height="400"></div>
 
 ## Setup and Installations
 ### Install Cordova
