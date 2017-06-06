@@ -27,21 +27,8 @@ or
     sudo npm update -g cordova
 
 
-### Add support for the iOS or Android SDK
-After cloning this repository, in the project root folder, run one of the following (depending on the platform you wish to develop for):
-
-    cordova platforms add ios
-    cordova platforms add android
-
-### Add plugins
-
-    cordova plugin add cordova-plugin-device  # Basic plugin
-    cordova plugin add cordova-plugin-console  # Basic plugin
-    cordova plugin add cordova-plugin-dialogs  # Native dialogs plugin
-    cordova plugin add cordova-plugin-statusbar  # Status bar plugin
-    cordova plugin add cordova-plugin-geolocation  # Geolocation plugin
-    cordova plugin add cordova-plugin-contacts  # Contacts plugin
-    cordova plugin add cordova-plugin-camera  # Camera plugin
+### Platforms and plugins
+These are managed in [config.xml](https://cordova.apache.org/docs/en/latest/config_ref/) and checked into source control.
 
 ## Building the Project
 ### Building for iOS
@@ -65,6 +52,12 @@ or
 Then run the application in the iOS emulator:
 
     cordova emulate ios
+
+Or on device, use:
+
+    cordova run ios --device
+
+You can set up Safari Web Inspector debugging with [these instructions](http://geeklearning.io/apache-cordova-and-remote-debugging-on-ios/).
     
 
 ### Building for Android

@@ -61,3 +61,24 @@ ul {
     background: transparent url(images/ic_action_location.png);
     background-repeat: no-repeat;
 }
+
+.table-view-cell.audio-cell {
+    padding: 0;
+}
+
+.table-view-cell > a.record-audio-btn, 
+.table-view-cell > a.play-audio-btn {
+    display: inline-block;
+    width: 49%;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 60px;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+.table-view-cell > a.play-audio-btn {
+    border-left: 1px solid #ddd;
+}
