@@ -5,8 +5,9 @@ Experimenting with Cordova for viewing and updating hard-coded contacts.
 This code was created by following [this Apache Cordova Tutorial](https://ccoenraets.github.io/cordova-tutorial/create-cordova-project.html)
 
 Example:
-![image](docs/image-one.png)
-![image](docs/image-two.png)
+
+![image](docs/image-one.png | width=200)
+![image](docs/image-two.png  | width=200)
 
 ## Setup and Installations
 ### Install Cordova
